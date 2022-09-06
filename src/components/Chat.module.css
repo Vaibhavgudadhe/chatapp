@@ -1,0 +1,9 @@
+.conatiner {
+  position: relative;
+  background-color: #222e35;
+  height: 93vh;
+  top: 24px;
+  width: 68.9vw;
+  display: flex;
+  flex-direction: column;
+}
