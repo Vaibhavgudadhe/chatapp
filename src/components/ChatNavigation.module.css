@@ -9,7 +9,7 @@
   background-color: #111b21;
 }
 
-p {
+.chats {
   height: 87vh;
   overflow-y: scroll;
 }
