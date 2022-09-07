@@ -14,7 +14,7 @@ export default function ChatItem() {
       <div className={classes.showcase}>
         <div className={classes.name_time}>
           <div className={classes.name}>
-            <span>Aani</span>
+            <span>Ayush</span>
           </div>
           <div className={classes.time}>12:25 AM</div>
         </div>

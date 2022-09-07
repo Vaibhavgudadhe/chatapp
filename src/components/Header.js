@@ -8,7 +8,7 @@ export default function Header() {
       <div className={classes.profile}>
         <div className={classes.pic}>
           <img
-            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+            src="https://pps.whatsapp.net/v/t61.24694-24/302665501_1281886039277431_5189467105774242617_n.jpg?stp=dst-jpg_s96x96&amp;ccb=11-4&amp;oh=01_AVyILiwYJFsBGXLe21S2zKST4EKucQPm_kXFcotS1ZyX_g&amp;oe=63283C61"
             alt="avatar"
           />
         </div>

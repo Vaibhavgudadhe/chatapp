@@ -6,4 +6,5 @@
   width: 68.9vw;
   display: flex;
   flex-direction: column;
+  border-left: 1px solid #2f3b43;
 }

@@ -19,6 +19,67 @@ export default function ChatList() {
       <ChatItem />
       <ChatItem />
       <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
+      <ChatItem />
     </div>
   );
 }

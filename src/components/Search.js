@@ -7,7 +7,7 @@ export default function Search() {
     <div className={classes.container}>
       <div className={classes.search}>
         <Searchicon />
-        <input type="text" />
+        <input type="text" placeholder='save or start new chat'/>
       </div>
     </div>
   );

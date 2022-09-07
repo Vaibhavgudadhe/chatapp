@@ -86,10 +86,12 @@
   margin-right: 2px;
   display: inline-block;
   flex: none;
-  color: var(--chatlist-icon);
+  color: #8696a0;
   vertical-align: top;
 }
 
-.conatiner::after {
-  border: 5px solid red;
+.conatiner:hover {
+  cursor: pointer;
+  transition: box-shadow 0.18s ease-out, background-color 0.25s ease-out;
+  background-color: #202c33;
 }
