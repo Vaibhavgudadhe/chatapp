@@ -1,0 +1,58 @@
+.container {
+  height: 60px;
+  padding: 0px 0px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  background-color: #2a3841;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 60px;
+}
+
+.icons {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.icons div {
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.message {
+  padding: 0px 20px;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 49px;
+  overflow: hidden;
+  transition: box-shadow 0.18s ease-out, background-color 0.25s ease-out;
+}
+.message .messagep {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 35px;
+  background-color: #202c33;
+  border-radius: 8px;
+  padding-left: 8px;
+  margin-right: 24px;
+}
+
+input[type='text'] {
+  width: 100%;
+  border: 2px solid #202c33;
+  border-radius: 4px;
+  outline: none;
+  padding: 4px;
+  color: aliceblue;
+  box-sizing: border-box;
+  background-color: #202c33;
+  transition: 0.3s;
+}
