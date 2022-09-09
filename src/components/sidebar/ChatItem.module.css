@@ -4,6 +4,7 @@
   height: 72px;
   display: flex;
   color: aliceblue;
+  border-bottom: 0.5px solid #2f3b43;
 }
 
 .profileImg {

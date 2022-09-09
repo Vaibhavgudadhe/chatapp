@@ -2,19 +2,16 @@ import React from 'react';
 import classes from './ChatItem.module.css';
 import { ReactComponent as DoubleTick } from '../../svg/doubletick.svg';
 
-export default function ChatItem() {
+export default function ChatItem(props) {
   return (
     <div className={classes.conatiner}>
       <div className={classes.profileImg}>
-        <img
-          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
-          alt=""
-        />
+        <img src={props.profileUrl} alt="" />
       </div>
       <div className={classes.showcase}>
         <div className={classes.name_time}>
           <div className={classes.name}>
-            <span>Ayush</span>
+            <span>{props.name}</span>
           </div>
           <div className={classes.time}>12:25 AM</div>
         </div>

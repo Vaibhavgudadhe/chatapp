@@ -6,5 +6,12 @@
   width: 68.9vw;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   border-left: 1px solid #2f3b43;
+}
+.home_bg{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
