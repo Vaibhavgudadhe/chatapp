@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './ChatItem.module.css';
-import { ReactComponent as DoubleTick } from '../svg/doubletick.svg';
+import { ReactComponent as DoubleTick } from '../../svg/doubletick.svg';
 
 export default function ChatItem() {
   return (

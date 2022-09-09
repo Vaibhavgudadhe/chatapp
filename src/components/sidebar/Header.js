@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Header.module.css';
-import { ReactComponent as Con } from '../svg/addContact.svg';
-import { ReactComponent as Dot } from '../svg/dot.svg';
+import { ReactComponent as Con } from '../../svg/addContact.svg';
+import { ReactComponent as Dot } from '../../svg/dot.svg';
 export default function Header() {
   return (
     <div className={classes.container}>

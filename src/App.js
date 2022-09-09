@@ -1,6 +1,6 @@
-import ChatNavigation from './components/ChatNavigation';
+import ChatNavigation from '../src/components/sidebar/ChatNavigation';
 import './App.css';
-import Chat from './components/Chat';
+import Chat from './components/chatBox/Chat';
 function App() {
   return (
     <div className="App">

@@ -1,8 +1,8 @@
 import React from 'react';
 import classes from './Footer.module.css';
-import { ReactComponent as Smiley } from '../svg/smiley.svg';
-import { ReactComponent as Attach } from '../svg/attach.svg';
-import { ReactComponent as Send } from '../svg/send.svg';
+import { ReactComponent as Smiley } from '../../svg/smiley.svg';
+import { ReactComponent as Attach } from '../../svg/attach.svg';
+import { ReactComponent as Send } from '../../svg/send.svg';
 export default function Footer() {
   return (
     <div className={classes.container}>

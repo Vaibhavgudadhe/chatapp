@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Search.module.css';
-import { ReactComponent as Searchicon } from '../svg/search.svg';
+import { ReactComponent as Searchicon } from '../../svg/search.svg';
 
 export default function Search() {
   return (
