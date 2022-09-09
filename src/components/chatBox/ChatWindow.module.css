@@ -5,3 +5,19 @@
   height: 555px;
   padding: 0px 0 15px 0;
 }
+
+aside {
+  height: 40vh !important;
+  width: 100% !important;
+  box-shadow: 0px 0px 0px #efefef !important;
+  background-color: #2A3841 !important;
+  border: none !important;
+}
+aside input{
+  visibility: hidden;
+}
+
+.emoji_picker {
+  position: absolute;
+  z-index: 10000;
+}
