@@ -1,6 +1,8 @@
 .conatiner {
+  /* background-image: url(../../../public/background.png); */
   position: relative;
   background-color: #222e35;
+ 
   height: 93vh;
   top: 24px;
   width: 68.9vw;
@@ -9,7 +11,7 @@
   justify-content: center;
   border-left: 1px solid #2f3b43;
 }
-.home_bg{
+.home_bg {
   position: relative;
   display: flex;
   align-items: center;

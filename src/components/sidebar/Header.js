@@ -13,11 +13,11 @@ export default function Header(props) {
       </div>
       <div className={classes.name}>{props.user.fullname}</div>
       <div className={classes.navicon}>
-        <div>
+        <div className="btnClicked">
           <Con />
         </div>
-        <div>
-          <Dot />
+        <div className="btnClicked">
+          <Dot onClick={props.logoutHandler}/>
         </div>
       </div>
     </div>

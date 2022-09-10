@@ -34,7 +34,6 @@ a {
   border: 6px solid #374045;
 }
 
-
 .emoji-picker-react .emoji-group:before {
-  background:#2A3841 !important ;
+  background: #2a3841 !important ;
 }

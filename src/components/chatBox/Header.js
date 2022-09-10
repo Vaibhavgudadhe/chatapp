@@ -15,10 +15,10 @@ export default function Header() {
         <span>Vaibhav</span>
       </div>
       <div className={classes.navicon}>
-        <div>
+        <div className="btnClicked">
           <Search />
         </div>
-        <div>
+        <div className="btnClicked">
           <Dot />
         </div>
       </div>
