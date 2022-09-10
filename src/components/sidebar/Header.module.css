@@ -29,7 +29,12 @@
   align-items: center;
 }
 
-.navicon div{
+.navicon div {
   cursor: pointer;
   margin-right: 20px;
+}
+
+.name {
+  color: aliceblue;
+  flex-grow: 13;
 }
