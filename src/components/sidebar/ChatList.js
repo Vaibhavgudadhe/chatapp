@@ -40,19 +40,38 @@ export default function ChatList(props) {
     return () => {
       unsubscribe();
     };
+  }, [props.user]);
+
+  const searchedUser = allUsers.filter((user) => {
+    if (props.search) {
+      if ( user.data.fullname.toLowerCase().includes(props.search.toLowerCase())) {
+        return user;
+      }
+    }
+    return null;
+  });
+
+  const searchItem = searchedUser.map((user) => {
+    return (
+      <ChatItem
+        key={user.id}
+        name={user.data.fullname}
+        profileUrl={user.data.photoURL}
+      />
+    );
   });
 
   return (
     <div>
-      {allUsers.map((user) => (
-        <div>
-          <ChatItem
-            key={user.data.id}
-            name={user.data.fullname}
-            profileUrl={user.data.photoURL}
-          />
-        </div>
-      ))}
+      {searchItem.length > 0
+        ? searchItem
+        : allUsers.map((user) => (
+            <ChatItem
+              key={user.id}
+              name={user.data.fullname}
+              profileUrl={user.data.photoURL}
+            />
+          ))}
     </div>
   );
 }
