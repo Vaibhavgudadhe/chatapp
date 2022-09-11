@@ -3,7 +3,7 @@ import ChatItem from './ChatItem';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../../firebase';
 
-export default function ChatList() {
+export default function ChatList(props) {
   const [allUsers, setAllUsers] = useState([]);
 
   // useEffect(() => {
@@ -29,25 +29,29 @@ export default function ChatList() {
     const userCollectionRef = collection(db, 'user');
     const unsubscribe = onSnapshot(userCollectionRef, (snapsort) => {
       setAllUsers(
-        snapsort.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
+        snapsort.docs
+          .map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+          .filter((doc) => doc.data.email !== props.user)
       );
     });
     return () => {
       unsubscribe();
     };
-  }, []);
+  });
 
   return (
     <div>
       {allUsers.map((user) => (
-        <ChatItem
-          key={user.data.id}
-          name={user.data.fullname}
-          profileUrl={user.data.photoURL}
-        />
+        <div>
+          <ChatItem
+            key={user.data.id}
+            name={user.data.fullname}
+            profileUrl={user.data.photoURL}
+          />
+        </div>
       ))}
     </div>
   );

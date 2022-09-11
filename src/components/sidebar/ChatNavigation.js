@@ -10,7 +10,7 @@ export default function ChatNavigation(props) {
       <Header user={props.user} logoutHandler={props.logoutHandler} />
       <Search />
       <div className={classes.chats}>
-        <ChatList />
+        <ChatList user={props.user.email} />
       </div>
     </div>
   );
