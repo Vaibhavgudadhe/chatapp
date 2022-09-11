@@ -1,7 +1,8 @@
 import React from 'react';
 import './Login.css';
-import { authentication } from '../firebase';
+import { db, authentication } from '../firebase';
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { addDoc, collection } from 'firebase/firestore';
 
 const Login = (props) => {
   const signInWithGoogle = () => {
@@ -15,6 +16,7 @@ const Login = (props) => {
         };
         props.setuser(newUser);
         localStorage.setItem('user', JSON.stringify(newUser));
+        addDoc(collection(db, 'user'), newUser);
       })
       .catch((error) => {
         const errorMessage = error.message;

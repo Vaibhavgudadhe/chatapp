@@ -1,81 +1,54 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ChatItem from './ChatItem';
+import { collection, onSnapshot } from 'firebase/firestore';
+import { db } from '../../firebase';
 
 export default function ChatList() {
+  const [allUsers, setAllUsers] = useState([]);
+
+  // useEffect(() => {
+  //   getUsers();
+  // }, []);
+
+  // const getUsers = () => {
+  //   const userCollectionRef = collection(db, 'user');
+  //   getDocs(userCollectionRef)
+  //     .then((res) => {
+  //       const data = res.docs.map((doc) => ({
+  //         data: doc.data(),
+  //         id: doc.id,
+  //       }));
+  //       setAllUsers(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err.message);
+  //     });
+  // };
+
+  useEffect(() => {
+    const userCollectionRef = collection(db, 'user');
+    const unsubscribe = onSnapshot(userCollectionRef, (snapsort) => {
+      setAllUsers(
+        snapsort.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      );
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
   return (
     <div>
-      <ChatItem
-        name="Alia"
-        profileUrl="https://images.pexels.com/photos/11500401/pexels-photo-11500401.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Sonam"
-        profileUrl="https://images.pexels.com/photos/11523778/pexels-photo-11523778.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Aisha"
-        profileUrl="https://images.pexels.com/photos/9241604/pexels-photo-9241604.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Alia"
-        profileUrl="https://images.pexels.com/photos/11500401/pexels-photo-11500401.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Sonam"
-        profileUrl="https://images.pexels.com/photos/11523778/pexels-photo-11523778.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Aisha"
-        profileUrl="https://images.pexels.com/photos/9241604/pexels-photo-9241604.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Alia"
-        profileUrl="https://images.pexels.com/photos/11500401/pexels-photo-11500401.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Sonam"
-        profileUrl="https://images.pexels.com/photos/11523778/pexels-photo-11523778.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Aisha"
-        profileUrl="https://images.pexels.com/photos/9241604/pexels-photo-9241604.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Alia"
-        profileUrl="https://images.pexels.com/photos/11500401/pexels-photo-11500401.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Sonam"
-        profileUrl="https://images.pexels.com/photos/11523778/pexels-photo-11523778.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Aisha"
-        profileUrl="https://images.pexels.com/photos/9241604/pexels-photo-9241604.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Alia"
-        profileUrl="https://images.pexels.com/photos/11500401/pexels-photo-11500401.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Sonam"
-        profileUrl="https://images.pexels.com/photos/11523778/pexels-photo-11523778.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Aisha"
-        profileUrl="https://images.pexels.com/photos/9241604/pexels-photo-9241604.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Alia"
-        profileUrl="https://images.pexels.com/photos/11500401/pexels-photo-11500401.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Sonam"
-        profileUrl="https://images.pexels.com/photos/11523778/pexels-photo-11523778.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
-      <ChatItem
-        name="Aisha"
-        profileUrl="https://images.pexels.com/photos/9241604/pexels-photo-9241604.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-      />
+      {allUsers.map((user) => (
+        <ChatItem
+          key={user.data.id}
+          name={user.data.fullname}
+          profileUrl={user.data.photoURL}
+        />
+      ))}
     </div>
   );
 }
