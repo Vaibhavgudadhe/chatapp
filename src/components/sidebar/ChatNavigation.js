@@ -9,7 +9,6 @@ export default function ChatNavigation(props) {
 
   const onchangeHandler = (e) => {
     setSearchInput(e.target.value);
-    // console.log(searchInput);
   };
 
   return (

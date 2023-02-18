@@ -13,7 +13,7 @@ export default function Chat() {
   const emojiHandler = () => {
     setEmojjiBox(!openEmoji);
   };
-  const onEmojiClick = (event, emojiObject) => {
+  const onEmojiClick = ( emojiObject) => {
     setMessage(message + emojiObject.emoji);
   };
   return (

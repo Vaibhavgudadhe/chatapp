@@ -3,8 +3,12 @@ import classes from './ChatItem.module.css';
 import { ReactComponent as DoubleTick } from '../../svg/doubletick.svg';
 
 export default function ChatItem(props) {
+  const openchatPage = () => {
+    console.log(props.id);
+  };
+
   return (
-    <div className={classes.conatiner}>
+    <div className={classes.conatiner} onClick={openchatPage}>
       <div className={classes.profileImg}>
         <img src={props.profileUrl} alt="" />
       </div>

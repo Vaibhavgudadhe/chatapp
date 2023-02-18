@@ -7,6 +7,7 @@ import { authentication } from './firebase';
 
 function App() {
   const [user, setuser] = useState(JSON.parse(localStorage.getItem('user')));
+  
 
   const logoutHandler = () => {
     authentication

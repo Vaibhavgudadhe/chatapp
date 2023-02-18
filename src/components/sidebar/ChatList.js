@@ -2,28 +2,10 @@ import React, { useEffect, useState } from 'react';
 import ChatItem from './ChatItem';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../../firebase';
+import Count from '../chatBox/count';
 
 export default function ChatList(props) {
   const [allUsers, setAllUsers] = useState([]);
-
-  // useEffect(() => {
-  //   getUsers();
-  // }, []);
-
-  // const getUsers = () => {
-  //   const userCollectionRef = collection(db, 'user');
-  //   getDocs(userCollectionRef)
-  //     .then((res) => {
-  //       const data = res.docs.map((doc) => ({
-  //         data: doc.data(),
-  //         id: doc.id,
-  //       }));
-  //       setAllUsers(data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err.message);
-  //     });
-  // };
 
   useEffect(() => {
     const userCollectionRef = collection(db, 'user');
@@ -44,7 +26,9 @@ export default function ChatList(props) {
 
   const searchedUser = allUsers.filter((user) => {
     if (props.search) {
-      if ( user.data.fullname.toLowerCase().includes(props.search.toLowerCase())) {
+      if (
+        user.data.fullname.toLowerCase().includes(props.search.toLowerCase())
+      ) {
         return user;
       }
     }
@@ -55,21 +39,26 @@ export default function ChatList(props) {
     return (
       <ChatItem
         key={user.id}
+        id={user.id}
         name={user.data.fullname}
         profileUrl={user.data.photoURL}
+        email={user.data.email}
       />
     );
   });
 
   return (
     <div>
+      <Count/>
       {searchItem.length > 0
         ? searchItem
         : allUsers.map((user) => (
             <ChatItem
               key={user.id}
+              id={user.id}
               name={user.data.fullname}
               profileUrl={user.data.photoURL}
+              email={user.data.email}
             />
           ))}
     </div>
